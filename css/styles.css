@@ -1,4 +1,56 @@
-:root{
-    --colorPrimario: #fff;
-    --colorSecundario: black;
+:root {
+    --colorPrimario: #171717;
+    --colorSecundario: #A65322;
+    --colorTercerario: #F3EBDD;
+    --colorCuaternario: #fff;
+    --colorverde: #4B5140;
 }
+
+/* SELECTOR UNIVERSAL */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--colorTercerario);
+    width: 100%;
+    min-height: 80px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    width: 90%;
+    min-height: 70px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__img-logo {
+    display: block;
+    height: 80px;
+}
+
+.menu__btn-menu {
+    display: none;
+    /* elimina los items del menu */
+}
+
+.menu__enlaces a {
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Poppins';
+    color: var(--colorPrimario);
+    padding: 1em;
+    font-weight: 500;
+}
+
+
+
+
+
