@@ -4,6 +4,8 @@
     --colorTercerario: #F3EBDD;
     --colorCuaternario: #fff;
     --colorverde: #4B5140;
+    --colorParrafos: #53575A;
+    --colorBorde: #282031;
 }
 
 /* SELECTOR UNIVERSAL */
@@ -16,7 +18,7 @@
 header {
     background-color: var(--colorTercerario);
     width: 100%;
-    min-height: 80px;
+    min-height: 90px;
     margin: 0 auto;
     align-items: center;
     justify-content: space-between;
@@ -44,13 +46,46 @@ header {
 .menu__enlaces a {
     text-align: center;
     text-decoration: none;
-    font-family: 'Poppins';
+    font-family: 'Sans-serif';
     color: var(--colorPrimario);
-    padding: 1em;
+    padding: 0.9em;
     font-weight: 500;
+    font-size: 1.3em;
+}
+
+.menu__enlaces a:hover{
+    color: red;
 }
 
 
 
+.estructura__titulo{
+    text-align: center;
+    font-family: 'Sans-Serif';
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.estructura__parrafo{
+    text-align: center;
+    font-family: 'Sans-Serif';
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.card__menu{
+    display: grid; /*el grid es el sistema de regillas (ACTIVARDOR)*/
+    gap: 1em; /*sirve para separar las imagenes (no esten juntas)*/
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /*CREA COLUNNAS*/
+}
+
+.card{
+    background-color: var(--colorCuaternario);
+    border: 5px solid var(--colorBorde);
+}
+
+.card__img img{
+    max-width: 100%; 
+}
 
 
