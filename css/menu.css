@@ -8,10 +8,326 @@
     --color-marfil: #F3EBDD;
     --color-blanco: #FFFFFF;
     --color-verde-oliva: #4B5140;
+    --colorBotones: #EC111A;
+    --colorSecundario: #082BA5;
+    --colorTerciario: #007BDF;
+    --colorTitulos: #282D31;
+    --colorParrafos: #53575A;
+    --colorSombras: #282D31;
+    --colorbordes: #DFE0E0;
 }
  /* Selector universal */
 * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;;
+}
+header {
+    background-color: var(--color-negro);
+    min-height: 90px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+body{
+    background-color: var(--color-marfil);
+}
+/* INICIO DE LA BARRA DE NAVEGACION */
+.menu {
+    display: flex;
+    width: 90%;
+    min-height: 70px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__img-logo {
+    display: block;
+    height: 80px;
+}
+
+.menu__btn-menu {
+    display: none;
+}
+
+.menu__enlaces a {
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Sans-serif';
+    color: var(--color-marfil);
+    padding: 0.9em;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.menu__enlaces, .menu__btn-menu, a:hover{
+    color: var(--color-cobre)
+}
+
+.estructura__titulo{
+    text-align: center;
+    font-family: 'Sans-Serif';
+    font-size: 3em;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1023px) {
+    .menu{
+        flex-direction: column ;
+        
+    }
+    .menu__logo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1em;
+
+    }
+    .menu__btn-menu{
+    display: block; 
+    color: var(--color-marfil); 
+    font-size: 1.5em;
+    }
+    .menu__enlaces a{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.titulo__menu{
+    font-family: 'sans-serif';
+}
+
+.imagen__centro{
+    align-items: center;
+    margin: 0 auto;
+    
+}
+/* INICIO DE CARDS */
+.cards__grid{
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.card{
+    background-color: #fff;
+    border-radius: 0.7em;
+    border: 1px solid var(--colorbordes);
+    box-shadow: 0 2px 2px var(--colorSombras);
+}
+
+.card__img img{
+    max-width: 100%;
+    border-radius: 0.7em 0.7em 0 0;
+}
+.card__content{
+    padding: 1em;
+}
+.card__content a{
+    text-decoration: none;
+}
+
+.card__title{
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 1em;
+    text-align: center;
+    color: var(--colorTitulos);
+    text-transform: uppercase;
+}
+
+.card__info{
+    background-color: var(--colorBotones);
+    color: #fff;
+    font-size: 1em;
+    padding: 1em;
+    margin-top: 2em;
+    display: block;
+    border-radius: .3em;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins';
+    transition: background-color .3s ease-in-out;
+}
+.card__info:hover{
+    background-color: #1E3E62;
+    color: #fff;
+    
+
+}
+h1{
+    text-align: center;
+    margin: 1em;
+}
+/* ==========================================================================
+   FOOTER  - BRASAS & SABOR
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-negro) !important;
+  color: var(--color-blanco);
+  font-family: var(--font-principal);
+  border-top: 1px solid rgba(243, 235, 221, 0.05); /* Línea de corte muy fina con marfil */
+}
+
+.footer__logo {
+  max-height: 55px;
+  display: block;
+}
+
+.footer__tagline {
+  font-family: var(--font-principal);
+  font-size: 13.5px;
+  line-height: 1.6;
+  max-width: 480px;
+  color: var(--color-marfil);
+  opacity: 0.8;
+}
+
+.text-accent {
+  color: var(--color-cobre) !important;
+}
+
+/* Encabezados con Bodoni Moda */
+.footer__titulo {
+  font-family: var(--font-secundaria);
+  color: var(--color-marfil);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.footer__divisor {
+  border: 0;
+  border-top: 1px solid rgba(243, 235, 221, 0.1);
+}
+
+/* Enlaces del Listado de Navegación */
+.footer__lista li {
+  margin-bottom: 10px;
+}
+
+.footer__lista a {
+  color: var(--color-marfil);
+  opacity: 0.65;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  transition: opacity 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+}
+
+.footer__lista a:hover {
+  opacity: 1;
+  color: var(--color-cobre);
+  padding-left: 4px; /* Pequeño deslizamiento elegante */
+}
+
+/* Iconos de Pasarelas de Pago Premium Ampliados */
+.footer__payments {
+  color: var(--color-marfil);
+}
+
+.footer__payments i {
+  font-size: 2.2rem; /* Tamaño incrementado notablemente */
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer__payments i:hover {
+  opacity: 1;
+  color: var(--color-cobre);
+}
+
+/* Badges minimalistas para Apps Locales */
+.payment-badge-clean {
+  font-family: var(--font-principal);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(243, 235, 221, 0.3);
+  color: var(--color-marfil);
+  padding: 4px 14px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.payment-badge-clean:hover {
+  opacity: 1;
+  border-color: var(--color-cobre);
+  color: var(--color-cobre);
+}
+
+/* Enlace a Encuestas */
+.footer__btn--encuesta {
+  color: var(--color-marfil);
+  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.footer__btn--encuesta:hover {
+  color: var(--color-cobre);
+}
+
+/* Redes Sociales de Enfoque Minimalista */
+.footer__red-social {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(243, 235, 221, 0.2);
+  color: var(--color-marfil);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.25s ease-in-out;
+}
+
+.footer__red-social:hover {
+  background-color: var(--color-cobre);
+  border-color: var(--color-cobre);
+  color: var(--color-blanco);
+  transform: translateY(-3px);
+}
+
+/* Caja de Libro de Reclamaciones Editorial */
+.footer__reclamaciones {
+  border: 1px solid rgba(243, 235, 221, 0.15);
+  background-color: transparent;
+  color: var(--color-marfil);
+  max-width: 220px;
+  transition: all 0.25s ease;
+}
+
+.footer__reclamaciones i {
+  color: var(--color-cobre);
+}
+
+.footer__reclamaciones:hover {
+  border-color: var(--color-cobre);
+  background-color: rgba(166, 83, 34, 0.05); /* Ligero tinte cobre */
+}
+
+.footer__reclamaciones-texto--superior {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.footer__reclamaciones-texto--inferior {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.border-muted-subtle {
+  border-color: rgba(243, 235, 221, 0.08) !important;
 }
