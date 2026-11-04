@@ -1,0 +1,362 @@
+/* =========================================================
+   ESTILOS GENERALES - POLLERÍA DELIVERY
+   ========================================================= */
+
+/* ===== RESET Y VARIABLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+:root {
+    --naranja: #ff7a00;
+    --naranja-oscuro: #e06500;
+    --rojo: #c0392b;
+    --oscuro: #1e1e1e;
+    --gris: #f5f5f5;
+    --blanco: #ffffff;
+}
+
+body {
+    background: var(--gris);
+    color: var(--oscuro);
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   MENÚ (estilos para tu HTML del menú)
+   ========================================================= */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+
+.menu__img-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.menu__btn-menu {
+    display: none;
+    color: var(--naranja);
+    font-size: 1.8rem;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.menu__enlaces {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu__enlaces a {
+    text-decoration: none;
+    color: var(--oscuro);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.menu__enlaces a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--naranja);
+    transition: width 0.3s;
+}
+
+.menu__enlaces a:hover {
+    color: var(--naranja);
+}
+
+.menu__enlaces a:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   RESPONSIVE DEL MENÚ
+   ========================================================= */
+@media (max-width: 850px) {
+    .menu {
+        flex-wrap: wrap;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .menu__logo {
+        width: 100%;
+    }
+
+    .menu__btn-menu {
+        display: block;
+    }
+
+    .menu__enlaces {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .menu__enlaces.activo {
+        max-height: 400px;
+        margin-top: 1rem;
+    }
+
+    .menu__enlaces a {
+        padding: 0.9rem 0;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+/* =========================================================
+   HERO / PORTADA
+   ========================================================= */
+.hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--blanco);
+    /* 👉 COLOCA AQUÍ TU IMAGEN DE FONDO PRINCIPAL */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                url('../img/banner-3.jpg') center/cover no-repeat;
+    padding: 2rem;
+}
+
+.hero__contenido h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero__contenido h1 span {
+    color: var(--naranja);
+}
+
+.hero__contenido p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.btn-principal {
+    display: inline-block;
+    background: var(--naranja);
+    color: var(--blanco);
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 6px 18px rgba(255, 122, 0, 0.4);
+}
+
+.btn-principal:hover {
+    background: var(--naranja-oscuro);
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+.seccion {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.seccion__titulo {
+    text-align: center;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin-bottom: 0.5rem;
+    color: var(--oscuro);
+}
+
+.seccion__titulo span {
+    color: var(--naranja);
+}
+
+.seccion__subtitulo {
+    text-align: center;
+    color: #777;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+
+/* =========================================================
+   TARJETAS DE PRODUCTOS
+   ========================================================= */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.8rem;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.tarjeta__cuerpo {
+    padding: 1.2rem 1.3rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tarjeta__cuerpo h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.tarjeta__cuerpo p {
+    color: #666;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.tarjeta__precio {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--rojo);
+    margin-bottom: 0.8rem;
+}
+
+.btn-pedido {
+    display: block;
+    text-align: center;
+    background: var(--naranja);
+    color: var(--blanco);
+    padding: 0.6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-pedido:hover {
+    background: var(--naranja-oscuro);
+}
+
+/* =========================================================
+   FRANJA DE BENEFICIOS
+   ========================================================= */
+.beneficios {
+    background: var(--oscuro);
+    color: var(--blanco);
+    padding: 3rem 1.5rem;
+}
+
+.beneficios__grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.beneficio i {
+    font-size: 2.4rem;
+    color: var(--naranja);
+    margin-bottom: 0.8rem;
+}
+
+.beneficio h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.beneficio p {
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+    background: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--naranja);
+    text-decoration: none;
+}
+
+.footer__redes {
+    margin-bottom: 1rem;
+}
+
+.footer__redes a {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 1.3rem;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer__redes a:hover {
+    color: var(--naranja);
+}

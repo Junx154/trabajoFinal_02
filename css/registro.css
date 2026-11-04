@@ -1,0 +1,352 @@
+/* =========================================================
+   ESTILOS EXCLUSIVOS PARA Login.html (REGISTRO)
+   No depende de delivery.css ni afecta otras páginas
+   ========================================================= */
+
+/* ===== RESET Y VARIABLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+:root {
+    --naranja: #ff7a00;
+    --naranja-oscuro: #e06500;
+    --oscuro: #1e1e1e;
+    --blanco: #ffffff;
+    --gris: #f5f5f5;
+}
+
+body {
+    background: var(--gris);
+    color: var(--oscuro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   ESTILOS DEL MENÚ (copiados para que se vea igual)
+   ========================================================= */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+
+.menu__img-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.menu__btn-menu {
+    display: none;
+    color: var(--naranja);
+    font-size: 1.8rem;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.menu__enlaces {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu__enlaces a {
+    text-decoration: none;
+    color: var(--oscuro);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.menu__enlaces a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--naranja);
+    transition: width 0.3s;
+}
+
+.menu__enlaces a:hover {
+    color: var(--naranja);
+}
+
+.menu__enlaces a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .menu {
+        flex-wrap: wrap;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .menu__logo {
+        width: 100%;
+    }
+
+    .menu__btn-menu {
+        display: block;
+    }
+
+    .menu__enlaces {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .menu__enlaces.activo {
+        max-height: 400px;
+        margin-top: 1rem;
+    }
+
+    .menu__enlaces a {
+        padding: 0.9rem 0;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+/* =========================================================
+   SECCIÓN REGISTRO
+   ========================================================= */
+.registro {
+    flex: 1;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.registro__contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--blanco);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    min-height: 600px;
+}
+
+/* ===== IMAGEN LATERAL ===== */
+.registro__imagen {
+    position: relative;
+    /* 👇 La imagen se pone en el HTML con style="background-image: url(...)" */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #333;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.registro__imagen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2));
+}
+
+.registro__imagen-texto {
+    position: relative;
+    z-index: 2;
+    color: var(--blanco);
+}
+
+.registro__imagen-texto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.registro__imagen-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.registro__imagen-texto strong {
+    color: var(--naranja);
+}
+
+/* ===== FORMULARIO ===== */
+.registro__formulario {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registro__titulo {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    color: var(--oscuro);
+}
+
+.registro__titulo span {
+    color: var(--naranja);
+}
+
+.registro__subtitulo {
+    color: #777;
+    margin-bottom: 1.8rem;
+    font-size: 0.95rem;
+}
+
+.campo {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: #444;
+}
+
+.campo input {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: inherit;
+}
+
+.campo input:focus {
+    border-color: var(--naranja);
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.15);
+}
+
+.btn-registro {
+    margin-top: 0.8rem;
+    background: var(--naranja);
+    color: var(--blanco);
+    border: none;
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-family: inherit;
+}
+
+.btn-registro:hover {
+    background: var(--naranja-oscuro);
+    transform: translateY(-2px);
+}
+
+.registro__login {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.registro__login a {
+    color: var(--naranja);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.registro__login a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+    background: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer a {
+    color: var(--naranja);
+    text-decoration: none;
+}
+
+.footer__redes {
+    margin-bottom: 1rem;
+}
+
+.footer__redes a {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 1.3rem;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer__redes a:hover {
+    color: var(--naranja);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 850px) {
+    .registro__contenedor {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .registro__imagen {
+        min-height: 220px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .registro__formulario {
+        padding: 2rem 1.5rem;
+    }
+
+    .registro__titulo {
+        font-size: 1.6rem;
+    }
+}
