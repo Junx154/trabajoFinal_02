@@ -6,6 +6,14 @@
     --colorverde: #4B5140;
     --colorParrafos: #53575A;
     --colorBorde: #282031;
+
+    /* colores del pie de pagina / compañero  */
+
+    --color-negro: #171717;
+    --color-cobre: #A65322;
+    --color-marfil: #F3EBDD;
+    --color-blanco: #FFFFFF;
+    --color-verde-oliva: #4B5140;
 }
 
 /* SELECTOR UNIVERSAL */
@@ -60,7 +68,7 @@ header {
 }
 
 .menu__enlaces a:hover{
-    color: red;
+    color: var(--colorSecundario);
 }
 
 
@@ -160,3 +168,171 @@ header {
   
 }
 
+/* ==========================================================================
+   FOOTER  - BRASAS & SABOR
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-negro) !important;
+  color: var(--color-blanco);
+  font-family: var(--font-principal);
+  border-top: 1px solid rgba(243, 235, 221, 0.05); /* Línea de corte muy fina con marfil */
+}
+
+.footer__logo {
+  max-height: 55px;
+  display: block;
+}
+
+.footer__tagline {
+  font-family: var(--font-principal);
+  font-size: 13.5px;
+  line-height: 1.6;
+  max-width: 480px;
+  color: var(--color-marfil);
+  opacity: 0.8;
+}
+
+.text-accent {
+  color: var(--color-cobre) !important;
+}
+
+/* Encabezados con Bodoni Moda */
+.footer__titulo {
+  font-family: var(--font-secundaria);
+  color: var(--color-marfil);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.footer__divisor {
+  border: 0;
+  border-top: 1px solid rgba(243, 235, 221, 0.1);
+}
+
+/* Enlaces del Listado de Navegación */
+.footer__lista li {
+  margin-bottom: 10px;
+}
+
+.footer__lista a {
+  color: var(--color-marfil);
+  opacity: 0.65;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  transition: opacity 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+}
+
+.footer__lista a:hover {
+  opacity: 1;
+  color: var(--color-cobre);
+  padding-left: 4px; /* Pequeño deslizamiento elegante */
+}
+
+/* Iconos de Pasarelas de Pago Premium Ampliados */
+.footer__payments {
+  color: var(--color-marfil);
+}
+
+.footer__payments i {
+  font-size: 2.2rem; /* Tamaño incrementado notablemente */
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer__payments i:hover {
+  opacity: 1;
+  color: var(--color-cobre);
+}
+
+/* Badges minimalistas para Apps Locales */
+.payment-badge-clean {
+  font-family: var(--font-principal);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(243, 235, 221, 0.3);
+  color: var(--color-marfil);
+  padding: 4px 14px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.payment-badge-clean:hover {
+  opacity: 1;
+  border-color: var(--color-cobre);
+  color: var(--color-cobre);
+}
+
+/* Enlace a Encuestas */
+.footer__btn--encuesta {
+  color: var(--color-marfil);
+  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.footer__btn--encuesta:hover {
+  color: var(--color-cobre);
+}
+
+/* Redes Sociales de Enfoque Minimalista */
+.footer__red-social {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(243, 235, 221, 0.2);
+  color: var(--color-marfil);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.25s ease-in-out;
+}
+
+.footer__red-social:hover {
+  background-color: var(--color-cobre);
+  border-color: var(--color-cobre);
+  color: var(--color-blanco);
+  transform: translateY(-3px);
+}
+
+/* Caja de Libro de Reclamaciones Editorial */
+.footer__reclamaciones {
+  border: 1px solid rgba(243, 235, 221, 0.15);
+  background-color: transparent;
+  color: var(--color-marfil);
+  max-width: 220px;
+  transition: all 0.25s ease;
+}
+
+.footer__reclamaciones i {
+  color: var(--color-cobre);
+}
+
+.footer__reclamaciones:hover {
+  border-color: var(--color-cobre);
+  background-color: rgba(166, 83, 34, 0.05); /* Ligero tinte cobre */
+}
+
+.footer__reclamaciones-texto--superior {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.footer__reclamaciones-texto--inferior {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.border-muted-subtle {
+  border-color: rgba(243, 235, 221, 0.08) !important;
+}
