@@ -18,7 +18,7 @@
 header {
     background-color: var(--colorTercerario);
     width: 100%;
-    min-height: 90px;
+    min-height: 40px;
     margin: 0 auto;
     align-items: center;
     justify-content: space-between;
@@ -50,7 +50,7 @@ header {
     color: var(--colorPrimario);
     padding: 0.9em;
     font-weight: 500;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 .menu__enlaces a:hover{
