@@ -16,7 +16,7 @@
 }
 
 header {
-    background-color: var(--colorTercerario);
+    background-color: var(--colorPrimario);
     width: 100%;
     min-height: 40px;
     margin: 0 auto;
@@ -47,7 +47,7 @@ header {
     text-align: center;
     text-decoration: none;
     font-family: 'Sans-serif';
-    color: var(--colorPrimario);
+    color: var(--colorTercerario);
     padding: 0.9em;
     font-weight: 500;
     font-size: 1.2em;
