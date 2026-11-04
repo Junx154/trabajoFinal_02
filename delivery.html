@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollería | Delivery de Pollos a la Brasa</title>
+
+    <!-- Font Awesome para los iconos del menú -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="css/delivery.css">
+</head>
+<body>
+
+    <!-- ===== INICIO DEL MENÚ (tu código) ===== -->
+    <!-- inicio del menu -->
+
+    <header id="header">
+        <nav class="menu">
+            <div class="menu__logo">
+                <a href="">
+                    <img src="img/logo_polleria_sin_fondo.svg" alt="" class="img-fluid menu__img-logo">
+                </a>
+
+                <a href="" class="menu__btn-menu" id="btn-menu">
+                    <i class="fa-solid fa-bars menu__icono-menu"></i>
+                </a>
+            </div>
+            <div class="menu__enlaces" id="enlaces">
+                <a href="index.html">INICIO</a>
+                <a href="contactos.html">CONTACTOS</a>
+                <a href="registro.html">REGISTRO</a>
+                <a href="Menu.html">COMIDAS</a>
+                <a href="Delivery.html">PEDIDOS</a>
+                <a href="Promociones.html">PROMOCIONES</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- fin del menu -->
+    <!-- ===== FIN DEL MENÚ ===== -->
+
+
+    <!-- ===== HERO / PORTADA ===== -->
+    <section class="hero">
+        <div class="hero__contenido">
+            <h1>El mejor <span>Pollo a la Brasa</span> a tu puerta</h1>
+            <p>Recién salido del horno, crujiente por fuera y jugoso por dentro. Pide ahora y recíbelo caliente en minutos.</p>
+            <a href="Delivery.html" class="btn-principal">🛵 PEDIR AHORA</a>
+        </div>
+    </section>
+
+
+    <!-- ===== PRODUCTOS DESTACADOS ===== -->
+    <section class="seccion">
+        <h2 class="seccion__titulo">Nuestros <span>Favoritos</span></h2>
+        <p class="seccion__subtitulo">Los platos que todos piden en nuestra pollería</p>
+
+        <div class="grid-productos">
+
+            <!-- 👇 Cambia el src de cada <img> por TU imagen -->
+            <article class="tarjeta">
+                <img src="img/icono-2.jpg" alt="Pollo a la brasa entero" class="tarjeta__img">
+                <div class="tarjeta__cuerpo">
+                    <h3>Pollo Entero a la Brasa</h3>
+                    <p>Pollo entero con papas fritas, ensalada y cremas de la casa.</p>
+                    <div class="tarjeta__precio">S/ 55.00</div>
+                    <a href="Delivery.html" class="btn-pedido">Añadir al pedido</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/banner-2.jpg" alt="Cuarto de pollo" class="tarjeta__img">
+                <div class="tarjeta__cuerpo">
+                    <h3>1/4 de Pollo a la Brasa</h3>
+                    <p>Perfecto para una persona: presa jugosa con papas y ensalada.</p>
+                    <div class="tarjeta__precio">S/ 18.00</div>
+                    <a href="Delivery.html" class="btn-pedido">Añadir al pedido</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/icono-3.jpg" alt="Parrilla de pollo" class="tarjeta__img">
+                <div class="tarjeta__cuerpo">
+                    <h3>Parrilla Personal</h3>
+                    <p>Brochetas de pollo a la parrilla con papas doradas y ensalada.</p>
+                    <div class="tarjeta__precio">S/ 22.00</div>
+                    <a href="Delivery.html" class="btn-pedido">Añadir al pedido</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/banner-3.jpg" alt="Combo familiar" class="tarjeta__img">
+                <div class="tarjeta__cuerpo">
+                    <h3>Combo Familiar</h3>
+                    <p>2 pollos enteros + papas grandes + ensalada + gaseosa 1.5L.</p>
+                    <div class="tarjeta__precio">S/ 99.00</div>
+                    <a href="Delivery.html" class="btn-pedido">Añadir al pedido</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ===== BENEFICIOS ===== -->
+    <section class="beneficios">
+        <div class="beneficios__grid">
+            <div class="beneficio">
+                <i class="fa-solid fa-motorcycle"></i>
+                <h4>Delivery Rápido</h4>
+                <p>Tu pedido caliente en menos de 45 minutos.</p>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-fire"></i>
+                <h4>Recién Horneado</h4>
+                <p>Cocinamos al momento, con leña y sazón casero.</p>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h4>Promos Especiales</h4>
+                <p>Descuentos y combos para toda la familia.</p>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-credit-card"></i>
+                <h4>Pago Fácil</h4>
+                <p>Efectivo, tarjeta o Yape desde tu casa.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__redes">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p>© 2025 Pollería El Buen Sabor — Todos los derechos reservados.</p>
+        <p><a href="index.html">Inicio</a> · <a href="contactos.html">Contactos</a> · <a href="Delivery.html">Pedidos</a></p>
+    </footer>
+
+
+    <!-- ===== SCRIPT DEL MENÚ HAMBURGUESA ===== -->
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const enlaces = document.getElementById('enlaces');
+
+        btnMenu.addEventListener('click', (e) => {
+            e.preventDefault();
+            enlaces.classList.toggle('activo');
+        });
+    </script>
+
+</body>
+</html>
