@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-
     <!-- favicon y/o logotipo de la pagina -->
-    <link rel="shortcut icon" href="img/favicon_blanco_sin_fondo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/WhatsApp Image 2026-10-30 at 08.07.21.jpeg" type="image/x-icon">
 
     <!-- libreria de fuentes -->
-   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
-    <!-- frameword de bootstrap -->
+    <!-- framework de bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -26,16 +27,145 @@
     <!--LA LIBRERIA JQUERRY SIEMPRE VA ARRRIBA -->
     <script src="js/WE_MC_03_jquery.js"></script>
 
-
-
-
 </head>
 
 <body>
-     <h1 class="xd">HELLO WORLD</h1>
+     <!-- inicio del menu -->
+
+    <header id="header">
+        <nav class="menu">
+            <div class="menu__logo">
+                <a href="">
+                    <img src="img/logo_polleria_sin_fondo.svg" alt="" class="img-fluid menu__img-logo">
+                </a>
+
+                <a href="" class="menu__btn-menu" id="btn-menu">
+                    <i class="fa-solid fa-bars menu__icono-menu"></i>
+                </a>
+            </div>
+            <div class="menu__enlaces" id="enlaces">
+                <a href="index.html">INICIO</a>
+                <a href="contactos.html">CONTACTOS</a>
+                <a href="Login.html">REGISTRO</a>
+                <a href="Menu.html">COMIDAS</a>
+                <a href="Delivery.html">PEDIDOS</a>
+                <a href="Promociones.html">PROMOCIONES</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- fin del menu -->
 
 
-    <script src="js/WE_MC_02_headroom.min.js"></script>
-<script src="js/WE_MC_04_menu-flex.js"></script>
+    <div class="container my-5">
+        <div class="row">
+            
+            <!-- COLUMNA IZQUIERDA: TEXTOS Y FORMULARIO -->
+            <div class="col-md-6 pe-md-4">
+                
+                <!-- Título principal -->
+                <h1 class="titulo-rojo mb-4">Comunícate con Nosotros</h1>
+                
+                <!-- Bloque Canales Directos -->
+                <h4 class="subtitulo-negro mb-3">Canales Directos</h4>
+                <div class="row g-3 mb-4">
+                    <div class="col-sm-6">
+                        <a href="https://wa.me/51906873067" target="_blank" class="btn-whatsapp">
+                            💬 WhatsApp 
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="tel:014445555" class="btn-telefono">
+                            <small>Central Telefónica</small>
+                            +51 906 873 067
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bloque Nuestras Sedes -->
+                <h4 class="subtitulo-negro mb-3">Nuestras Sedes</h4>
+                <div class="row mb-4">
+                    <!-- Sede Miraflores -->
+                    <div class="col-sm-6 mb-3">
+                        <div class="d-flex align-items-start">
+                            <span class="pin-amarillo">📍</span>
+                            <div>
+                                <strong>Sede Miraflores</strong><br>
+                                <span class="text-muted small">Av. Larco 123</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Horario Sede Miraflores -->
+                    <div class="col-sm-6 mb-3">
+                        <div class="text-muted small">
+                            🕒 Lun-Dom: 12:00 PM - 11:00 PM
+                        </div>
+                    </div>
+                    
+                    <!-- Sede Surco -->
+                    <div class="col-sm-6 mb-3">
+                        <div class="d-flex align-items-start">
+                            <span class="pin-amarillo">📍</span>
+                            <div>
+                                <strong>Sede Surco</strong><br>
+                                <span class="text-muted small">Av. Caminos del Inca 412</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Horario Sede Surco -->
+                    <div class="col-sm-6 mb-3">
+                        <div class="text-muted small">
+                            🕒 Lun-Dom: 12:00 PM - 11:00 PM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque Formulario de Mensaje -->
+                <h4 class="subtitulo-negro mb-3">Déjanos un mensaje</h4>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Mensaje enviado!');">
+                    
+                    <!-- Campos Nombre y Correo -->
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Nombre y Apellido" required>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Campo Mensaje -->
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+                    </div>
+                    
+                    <!-- Botón Enviar -->
+                    <button type="submit" class="btn-enviar-rojo">Enviar</button>
+                </form>
+
+            </div>
+
+            <!-- COLUMNA DERECHA: MAPA -->
+            <div class="col-md-6 mt-4 mt-md-0">
+                <!-- Caja que simula el mapa de Lima -->
+                <div class="mapa-simulado">
+                    <div class="text-center p-3">
+                        <p class="fw-normal text-secondary small">
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.643137618515!2d-77.0641598253671!3d-11.999176641015648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce568c042771%3A0x6072f46c2b26e80!2sSENATI!5e0!3m2!1ses-419!2spe!4v1793751369378!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+
+/* VARIABLES CSS */
+/* EL ROOT ES EL SELECTOR PADRE */
+:root {
+    /* Paleta corporativa - Brasas & Sabor */
+    --color-negro: #171717;
+    --color-cobre: #A65322;
+    --color-marfil: #F3EBDD;
+    --color-blanco: #FFFFFF;
+    --color-verde-oliva: #4B5140;
+}
+ /* Selector universal */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;;
+}
