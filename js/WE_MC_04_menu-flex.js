@@ -1,40 +1,42 @@
 $(function() {
-
     var header = document.getElementById('header');
-    var headroom = new Headroom(header);
-    headroom.init();
+    var enlaces = $('#enlaces');
+    var btnMenu = $('#btn-menu');
+    var icono = $('#btn-menu .menu__icono-menu, #btn-menu .menu__icono');
+    var anchoMovil = 1023;
 
+    if (header && typeof Headroom !== 'undefined') {
+        new Headroom(header).init();
+    }
 
-    //Menú Responsive
-    // Calculamos el ancho e la página
+    function actualizarMenu() {
+        var esMovil = $(window).width() <= anchoMovil;
 
-    var ancho = $(window).width(),
-        enlaces = $('#enlaces'),
-        btnMenu = $('#btn-menu'),
-        icono = $('#btn-menu .icono-menu');
-
-    if (ancho < 700) {
-        enlaces.hide();
-        icono.addClass('fa-bars');
+        enlaces.stop(true, true);
+        if (esMovil) {
+            enlaces.hide().removeClass('activo');
+        } else {
+            enlaces.show().removeClass('activo');
+        }
+        btnMenu.attr('aria-expanded', String(!esMovil));
+        icono.toggleClass('fa-bars', esMovil);
+        icono.toggleClass('fa-times', !esMovil);
     }
 
     btnMenu.on('click', function(e) {
-        enlaces.slideToggle();
-        icono.toggleClass('fa-bars');
-        icono.toggleClass('fa-times');
+        e.preventDefault();
 
-    });
-
-    $(window).on('resize', function() {
-        if ($(this).width() > 1023) {
-            enlaces.show();
-            icono.addClass('fa-times');
-            icono.removeClass('fa-bars');
-        } else {
-            enlaces.hide();
-            icono.addClass('fa-bars');
-            icono.removeClass('fa-times');
+        if ($(window).width() > anchoMovil) {
+            return;
         }
 
+        var abierto = !enlaces.is(':visible');
+        enlaces.stop(true, true).slideToggle(150).toggleClass('activo', abierto);
+        btnMenu.attr('aria-expanded', String(abierto));
+        icono.toggleClass('fa-bars', !abierto);
+        icono.toggleClass('fa-times', abierto);
     });
+
+    $(window).on('resize', actualizarMenu);
+    actualizarMenu();
 });
