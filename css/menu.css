@@ -1,17 +1,382 @@
-
-/* VARIABLES CSS */
-/* EL ROOT ES EL SELECTOR PADRE */
+/* ==========================================
+   VARIABLES CSS Y RESET
+   ========================================== */
 :root {
-    /* Paleta corporativa - Brasas & Sabor */
     --color-negro: #171717;
     --color-cobre: #A65322;
     --color-marfil: #F3EBDD;
     --color-blanco: #FFFFFF;
     --color-verde-oliva: #4B5140;
+    --colorBotones: #EC111A;
+    --colorSecundario: #082BA5;
+    --colorTerciario: #007BDF;
+    --colorTitulos: #282D31;
+    --colorParrafos: #53575A;
+    --colorSombras: #282D31;
+    --colorbordes: #DFE0E0;
+    --font-principal: 'Montserrat', sans-serif;
+    --font-secundaria: 'Bodoni Moda', serif;
 }
- /* Selector universal */
+
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-marfil);
+    font-family: var(--font-principal);
+}
+
+header {
+    background-color: var(--color-negro);
+    min-height: 90px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    width: 90%;
+    min-height: 70px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__img-logo {
+    display: block;
+    height: 80px;
+}
+
+.menu__btn-menu {
+    display: none;
+}
+
+.menu__enlaces a {
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Sans-serif';
+    color: var(--color-marfil);
+    padding: 0.9em;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.menu__enlaces, .menu__btn-menu, a:hover{
+    color: var(--color-cobre);
+}
+
+.estructura__titulo{
+    text-align: center;
+    font-family: 'Sans-Serif';
+    font-size: 3em;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1023px) {
+    .menu {
+        flex-direction: column;
+    }
+    .menu__logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1em;
+    }
+    .menu__btn-menu {
+        display: block; 
+        color: var(--color-marfil); 
+        font-size: 1.5em;
+    }
+    /* Ocultamos los enlaces por defecto en celular/tablet */
+    .menu__enlaces {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+    }
+    .menu__enlaces.activo {
+        display: flex;
+    }
+    .menu__enlaces a {
+        width: 100%;
+        display: block;
+    }
+}
+.contacto__boton{
+    width: 20%;
+    padding: 12px;
+    background-color: var(--color-cobre);
+    color: var(--color-marfil);
+    border: none;
+    border-radius: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ==========================================
+   CABECERA Y BANNER
+   ========================================== */
+.menu-hero {
+    text-align: center;
+    padding: 2.5rem 1rem 1rem 1rem;
+}
+
+.menu-hero__subtitulo {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-cobre);
+    font-weight: 600;
+}
+
+.titulo__menu {
+    font-family: var(--font-secundaria);
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--colorTitulos);
+    text-align: center;
+    margin: 0.5em 0 1em 0;
+    letter-spacing: 1px;
+}
+
+.carta-banner {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.carta-banner__img {
+    width: 100%;
+    display: block;
+}
+
+/* ==========================================
+   GRID DE CARDS (BEM)
+   ========================================== */
+.cards__grid {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    margin-bottom: 5rem;
+}
+
+.card {
+    background-color: var(--color-blanco);
+    border-radius: 0.7em;
+    border: 1px solid var(--colorbordes);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card__img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.7em 0.7em 0 0;
+}
+
+.card__content {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card__title {
+    font-family: var(--font-secundaria);
+    font-weight: 700;
+    font-size: 1.15em;
+    text-align: center;
+    color: var(--colorTitulos);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.card__description {
+    font-family: var(--font-principal);
+    font-size: 0.85rem;
+    color: var(--colorParrafos);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.card__precio {
+    font-family: var(--font-principal);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-cobre);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.card__info {
+    background-color: var(--color-cobre);
+    color: var(--color-blanco);
+    font-size: 0.9em;
+    padding: 0.9em;
+    display: block;
+    border-radius: .3em;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--font-principal);
+    transition: background-color .3s ease-in-out;
+}
+
+.card__info:hover {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+}
+
+/* ==========================================
+   FOOTER - BRASAS & SABOR
+   ========================================== */
+.site-footer {
+    background-color: var(--color-negro) !important;
+    color: var(--color-blanco);
+    font-family: var(--font-principal);
+    border-top: 1px solid rgba(243, 235, 221, 0.05);
+}
+
+.footer__logo {
+    max-height: 55px;
+    display: block;
+}
+
+.footer__tagline {
+    font-size: 13.5px;
+    line-height: 1.6;
+    max-width: 480px;
+    color: var(--color-marfil);
+    opacity: 0.8;
+}
+
+.text-accent {
+    color: var(--color-cobre) !important;
+}
+
+.footer__titulo {
+    font-family: var(--font-secundaria);
+    color: var(--color-marfil);
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.footer__divisor {
+    border: 0;
+    border-top: 1px solid rgba(243, 235, 221, 0.1);
+}
+
+.footer__lista li {
+    margin-bottom: 10px;
+}
+
+.footer__lista a {
+    color: var(--color-marfil);
+    opacity: 0.65;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+}
+
+.footer__lista a:hover {
+    opacity: 1;
+    color: var(--color-cobre);
+    padding-left: 4px;
+}
+
+.footer__payments img {
+    height: 22px;
+    opacity: 0.8;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.2s ease;
+}
+
+.footer__btn--encuesta {
+    color: var(--color-marfil);
+    opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.footer__btn--encuesta:hover {
+    color: var(--color-cobre);
+}
+
+.footer__red-social {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(243, 235, 221, 0.2);
+    color: var(--color-marfil);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.25s ease-in-out;
+}
+
+.footer__red-social:hover {
+    background-color: var(--color-cobre);
+    border-color: var(--color-cobre);
+    color: var(--color-blanco);
+    transform: translateY(-3px);
+}
+
+.footer__reclamaciones {
+    border: 1px solid rgba(243, 235, 221, 0.15);
+    background-color: transparent;
+    color: var(--color-marfil);
+    max-width: 220px;
+    transition: all 0.25s ease;
+}
+
+.footer__reclamaciones i {
+    color: var(--color-cobre);
+}
+
+.footer__reclamaciones:hover {
+    border-color: var(--color-cobre);
+    background-color: rgba(166, 83, 34, 0.05);
+}
+
+.footer__reclamaciones-texto--superior {
+    font-size: 10px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+.footer__reclamaciones-texto--inferior {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.border-muted-subtle {
+    border-color: rgba(243, 235, 221, 0.08) !important;
+}
+.footer__payments img {
+    height: 22px;
+    opacity: 0.9;
+    filter: none !important;
+    transition: opacity 0.2s ease;
 }
