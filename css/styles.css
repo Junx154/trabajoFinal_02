@@ -164,30 +164,25 @@ header {
     line-height: 1.6;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .menu-card {
+        transition: none;
+    }
+
+    .menu-card:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================================================
+   FOOTER  - BRASAS & SABOR (inicio del pie de pagina)
+   ========================================================================== */
+
 .site-footer {
-    margin-top: 4rem;
-    padding: 3.5rem 0 1.5rem;
-    background:
-        radial-gradient(ellipse at top left, rgba(166, 83, 34, 0.18), transparent 38%),
-        var(--color-negro);
-    color: var(--color-blanco);
-    font-family: 'Poppins', sans-serif;
-}
-
-.site-footer > .container {
-    width: min(100% - 2rem, 1200px);
-    max-width: 1200px;
-}
-
-.footer__intro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.footer__brand {
-    max-width: 500px;
+  background-color: var(--color-negro) !important;
+  color: var(--color-blanco);
+  font-family: var(--font-principal);
+  border-top: 1px solid rgba(243, 235, 221, 0.05); /* Línea de corte muy fina con marfil */
 }
 
 .footer__logo {
